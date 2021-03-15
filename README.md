@@ -1,1 +1,1 @@
-# objectutilities
+# js-object-utilities
