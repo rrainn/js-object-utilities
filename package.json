@@ -1,0 +1,45 @@
+{
+  "name": "objectutilities",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build:clean && npm run build",
+    "build": "tsc",
+    "build:clean": "rimraf dist",
+    "build:watch": "npm run build -- -w",
+    "test:nocoverage": "mocha",
+    "test": "nyc npm run test:nocoverage",
+    "test:debug": "npm run test:nocoverage -- --no-timeout --inspect=9229",
+    "test:debug:breakpoint": "npm run test:nocoverage -- --no-timeout --inspect-brk=9229",
+    "test:types": "tsc --project test/types/tsconfig.json",
+    "lint": "eslint . --ext .ts,.js --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.13.0",
+    "mocha": "^7.2.0",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrainn/objectutilities.git"
+  },
+  "keywords": [],
+  "author": "rrainn, Inc.",
+  "license": "UNLICENSE",
+  "bugs": {
+    "url": "https://github.com/rrainn/objectutilities/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/rrainn/objectutilities#readme"
+}
