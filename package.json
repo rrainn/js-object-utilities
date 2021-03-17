@@ -31,7 +31,12 @@
     "type": "git",
     "url": "git+https://github.com/rrainn/js-object-utilities.git"
   },
-  "keywords": [],
+  "keywords": [
+    "object",
+    "utilities",
+    "nested",
+    "helper"
+  ],
   "author": "rrainn, Inc.",
   "license": "UNLICENSE",
   "bugs": {
