@@ -6,14 +6,17 @@ import keys = require("./keys");
 import entries = require("./entries");
 import equals = require("./equals");
 import {clearEmpties} from "./clear_empties";
+import { GeneralObject, GeneralObjectOrValue } from "./types";
 
-export = {
+export {
 	get,
 	set,
-	"delete": deleteFunc,
+	deleteFunc as delete,
 	pick,
 	keys,
 	entries,
 	equals,
-	clearEmpties
+	clearEmpties,
+	GeneralObject,
+	GeneralObjectOrValue
 };
