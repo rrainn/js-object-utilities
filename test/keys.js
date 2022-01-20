@@ -30,6 +30,15 @@ describe("utils.keys", () => {
 		{
 			"input": {"hello": Buffer.from("world")},
 			"output": ["hello"]
+		},
+		{
+			"input": (() => {
+				let object = {};
+				object.array = {"first": 1};
+				object.array2 = object;
+				return object;
+			})(),
+			"output": ["array", "array.first", "array2"]
 		}
 	];
 
