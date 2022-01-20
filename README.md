@@ -158,3 +158,24 @@ console.log(object);
 // 	}
 // }
 ```
+
+### objectutils.isCircular(obj[, searchKey])
+
+This function checks to see if an object is circular. If a search key is passed in it will only return `true` if the object is circular and the search key is the key that caused the circularity.
+
+```js
+const objectutils = require("js-object-utilities");
+
+let object = {};
+object.array = {"first": 1};
+object.array2 = object;
+
+const isCircular = objectutils.isCircular(object);
+console.log(isCircular); // true
+
+const isRandomKeyCircular = objectutils.isCircular(object, "random");
+console.log(isRandomKeyCircular); // false
+
+const isArray2KeyCircular = objectutils.isCircular(object, "array2");
+console.log(isArray2KeyCircular); // true
+```

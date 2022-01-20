@@ -6,7 +6,8 @@ import keys = require("./keys");
 import entries = require("./entries");
 import equals = require("./equals");
 import {clearEmpties} from "./clear_empties";
-import { GeneralObject, GeneralObjectOrValue } from "./types";
+import {GeneralObject, GeneralObjectOrValue} from "./types";
+import isCircular = require("./isCircular");
 
 export {
 	get,
@@ -17,6 +18,7 @@ export {
 	entries,
 	equals,
 	clearEmpties,
+	isCircular,
 	GeneralObject,
 	GeneralObjectOrValue
 };
