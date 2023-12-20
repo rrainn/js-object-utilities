@@ -8,6 +8,7 @@ import equals = require("./equals");
 import {clearEmpties} from "./clear_empties";
 import {GeneralObject, GeneralObjectOrValue} from "./types";
 import isCircular = require("./isCircular");
+import circularKeys = require("./circularKeys");
 
 export {
 	get,
@@ -19,6 +20,7 @@ export {
 	equals,
 	clearEmpties,
 	isCircular,
+	circularKeys,
 	GeneralObject,
 	GeneralObjectOrValue
 };
