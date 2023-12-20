@@ -7,7 +7,7 @@ const main = <T>(object: GeneralObjectOrValue<T>, existingKey = ""): [string, Ge
 		const keyWithExisting = `${existingKey ? `${existingKey}.` : ""}${key}`;
 		accumulator.push([keyWithExisting, value]);
 
-		if (typeof value === "object" && !(value instanceof Buffer) && value !== null && !isCircular(value, keyWithExisting)) {
+		if (typeof value === "object" && !(value instanceof Buffer) && !(value instanceof Uint8Array) && value !== null && !isCircular(value, keyWithExisting)) {
 			accumulator.push(...main(value, keyWithExisting));
 		}
 
