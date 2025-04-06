@@ -13,7 +13,7 @@ export = <T>(object: GeneralObject<T>, searchKey?: string): string[] => {
 		}
 
 		if (stackSet.has(object)) { // it's cyclic! Print the object and its locations.
-			const oldIndex: number = stack.indexOf(object);
+			// const oldIndex: number = stack.indexOf(object);
 			const l1: string = keys.join(".") + "." + key;
 			// const l2: string = keys.slice(0, oldIndex + 1).join(".");
 			const currentKey: string = l1.replace(`${originalKey}.`, "");
