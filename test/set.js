@@ -54,4 +54,18 @@ describe("utils.set", () => {
 			expect(utils.set(...test.input)).to.eql(test.output);
 		});
 	});
+
+	it("Should protect against prototype pollution when using Reflect.apply for __proto__", () => {
+		let obj = {};
+		expect(JSON.stringify({}.__proto__)).to.eql("{}");
+		try {
+			// for multiple functions, uncomment only one for each execution.
+			Reflect.apply(utils.set, {}, [obj, "__proto__.pollutedKey", 123]);
+		} catch (e) {
+			expect(e).to.not.exist();
+		}
+		expect(JSON.stringify({}.__proto__)).to.eql("{}");
+		expect(Object.prototype.pollutedKey).to.be.undefined;
+		delete Object.prototype.pollutedKey;
+	});
 });
